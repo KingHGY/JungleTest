@@ -94,12 +94,6 @@ public class ChessGameFrame extends JFrame {
         chessboardComponent.setLocation(HEIGTH / 5, HEIGTH / 10);
         add(chessboardComponent);
     }
-    private void addNull()
-    {
-        System.out.println("akj");
-        //TBD
-    }
-
     /**
      * 在游戏面板中添加标签
      */
