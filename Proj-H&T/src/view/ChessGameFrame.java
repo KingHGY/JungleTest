@@ -96,6 +96,7 @@ public class ChessGameFrame extends JFrame {
     }
     private void addNull()
     {
+        System.out.println("akj");
         //TBD
     }
 
