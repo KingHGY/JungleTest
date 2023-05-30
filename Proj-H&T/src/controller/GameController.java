@@ -96,19 +96,22 @@ public class GameController implements GameListener {
 
        ArrayList <ChessboardPoint> reaminedMovable = searchChess();
        if (reaminedMovable.size() == 0){
+           System.out.println("没有可以走的棋子了");
            if (currentPlayer.equals(PlayerColor.RED)){
-               JOptionPane.showMessageDialog(null, "        红方获胜！！！\n      点击确定，再开一把",
-                       "Win!!!", JOptionPane.INFORMATION_MESSAGE);
-               redWin++;
-               view.chessGameFrame.setredWinLabel2(redWin);
-               reset();
-           }
-           else {
                JOptionPane.showMessageDialog(null, "        蓝方获胜！！！\n      点击确定，再开一把",
                        "Win!!!", JOptionPane.INFORMATION_MESSAGE);
                blueWin++;
                view.chessGameFrame.setBlueWinLabel2(blueWin);
                reset();
+               return;
+           }
+           else {
+               JOptionPane.showMessageDialog(null, "        红方获胜！！！\n      点击确定，再开一把",
+                       "Win!!!", JOptionPane.INFORMATION_MESSAGE);
+               redWin++;
+               view.chessGameFrame.setredWinLabel2(redWin);
+               reset();
+               return;
            }
        }
 
