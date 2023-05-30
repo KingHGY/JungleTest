@@ -49,7 +49,7 @@ public class ChessboardComponent extends JPanel {
 
     public ChessboardComponent(int chessSize,  JLabel timeLabel, ChessGameFrame chessGameFrame) {
         this.timeLabel = timeLabel;
-        this.turnLabel = turnLabel;
+        //this.turnLabel = turnLabel;
         CHESS_SIZE = chessSize;
         int width = CHESS_SIZE * 7;
         int height = CHESS_SIZE * 9;

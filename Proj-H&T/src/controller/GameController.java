@@ -43,6 +43,7 @@ public class GameController implements GameListener {
     public int playBackNumber = 1;
     public int easyAIBomb = 0;
     public int hardAIBomb = 0;
+    public int timerBomb = 0;
 
     //新建棋局的时候同时新建了一个文件夹
     public GameController(ChessboardComponent view, Chessboard model) throws IOException {
@@ -228,6 +229,7 @@ public class GameController implements GameListener {
         //turnLabel.setVisible(true);
         easyAIBomb = 0;
         hardAIBomb = 0;
+        timerBomb = 0;
         view.repaint();
         //再重新摆好棋子
         model.initPieces();

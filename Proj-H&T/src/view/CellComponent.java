@@ -30,42 +30,20 @@ public class CellComponent extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponents(g);
-        if(number == 5)
-        {
+        if (number == 5) {
             background = grass;
-        }
-        else if(number == 6)
-        {
+        } else if (number == 6) {
             background = grass1;
-        }
-        else if(number == 3)
-        {
+        } else if (number == 3) {
             background = Color.GRAY;
-        }
-        else if(number == 4)
-        {
+        } else if (number == 4) {
             background = Color.orange;
-        }
-        else if(number == 1)
-        {
+        } else if (number == 1) {
             background = water;
-        }
-        else if(number == 2)
-        {
+        } else if (number == 2) {
             background = water1;
         }
         g.setColor(background);
-        g.fillRect(1, 1, this.getWidth()-1, this.getHeight()-1);
-
-/*
-
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor(new Color(255, 253, 87, 150));
-        RoundRectangle2D roundedRectangle = new RoundRectangle2D.Double(1, 1,
-                this.getWidth() - 1, this.getHeight() - 1, size / 4, size / 4);
-        g2d.fill(roundedRectangle);
-*/
+        g.fillRect(1, 1, this.getWidth() - 1, this.getHeight() - 1);
     }
-
-    //the "CellView" class in dalao project can teach us how to highlights the chess
 }

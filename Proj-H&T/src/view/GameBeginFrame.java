@@ -49,7 +49,7 @@ public class GameBeginFrame extends JFrame
         button.addActionListener((e) ->
         {
             this.setVisible(false);
-            Timer.time = 11;
+            Timer.time = 31;
             if (GameController.timer == null)
             {
                 GameController.timer = new Timer(chessGameFrame.getChessboardComponent().gameController);

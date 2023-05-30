@@ -59,6 +59,7 @@ public class ChessGameFrame extends JFrame {
         addDrawButton();
         addSurrenderButton();
         addAutoClickButton();
+        addCloseTimer();
 
         Image picture = new ImageIcon("Resource/day1.jpg").getImage();
         picture = picture.getScaledInstance(1100, 810, Image.SCALE_DEFAULT);
@@ -180,8 +181,8 @@ public class ChessGameFrame extends JFrame {
      */
 
     private void addTimeLabel() {
-        timeLabel = new JLabel("Time: 10");
-        timeLabel.setLocation(20, HEIGHT / 10 + 30);
+        timeLabel = new JLabel("Time: 30");
+        timeLabel.setLocation(20, HEIGHT / 10 + 10);
         timeLabel.setSize(200, 60);
         timeLabel.setFont(new Font("Rockwell", Font.BOLD, 32));
         add(timeLabel);
@@ -315,7 +316,6 @@ public class ChessGameFrame extends JFrame {
             if(chessboardComponent.gameController.easyAIBomb == 0)
             {
                 chessboardComponent.gameController.easyAI = true;
-                //chessboardComponent.gameController.timer.stop();
                 chessboardComponent.gameController.easyAIBomb = 1;
                 timeLabel.setVisible(false);
 
@@ -323,9 +323,11 @@ public class ChessGameFrame extends JFrame {
             else
             {
                 chessboardComponent.gameController.easyAI = false;
-                //chessboardComponent.gameController.timer.run();/////////the program will collapse
                 chessboardComponent.gameController.easyAIBomb = 0;
-                timeLabel.setVisible(true);
+                if(chessboardComponent.gameController.timerBomb == 0)
+                {
+                    timeLabel.setVisible(true);
+                }
             }
         });
         add(button);
@@ -351,7 +353,10 @@ public class ChessGameFrame extends JFrame {
                 chessboardComponent.gameController.hardAI = false;
                 //chessboardComponent.gameController.timer.run();/////////the program will collapse
                 chessboardComponent.gameController.hardAIBomb = 0;
-                timeLabel.setVisible(true);
+                if(chessboardComponent.gameController.timerBomb == 0)
+                {
+                    timeLabel.setVisible(true);
+                }
             }
 
         });
@@ -442,7 +447,7 @@ public class ChessGameFrame extends JFrame {
         JButton button = new JButton("LazyGuyNeedIt");
         button.setLocation(10, HEIGTH / 10 + 180);
         button.setSize(150, 60);
-        button.setFont(new Font("Rockwell", Font.BOLD, 20));
+        button.setFont(new Font("Rockwell", Font.BOLD, 15));
         add(button);
 
         button.addActionListener( (e) -> {
@@ -453,6 +458,26 @@ public class ChessGameFrame extends JFrame {
                 }
             },1000);
         });
+    }
+    public void addCloseTimer()
+    {
+        JButton button = new JButton("Timer Switch");
+        button.setLocation(10, HEIGTH / 10 + 270);
+        button.setSize(150, 60);
+        button.setFont(new Font("Rockwell", Font.BOLD, 17));
+        button.addActionListener( (e) -> {
+            if(chessboardComponent.gameController.timerBomb == 0)
+            {
+                chessboardComponent.gameController.timerBomb = 1;
+                timeLabel.setVisible(false);
+            }
+            else
+            {
+                chessboardComponent.gameController.timerBomb = 0;
+                timeLabel.setVisible(true);
+            }
+        });
+        add(button);
     }
 
     public void robotStart() {

@@ -89,7 +89,6 @@ public class Chessboard {
         else {
             new SoundEffect().playEffect("Resource\\chicken.wav");
             setChessPiece(dest, removeChessPiece(src));
-            //turn++;/////////////////////////////////////////////////////////////////////////
             System.out.println("成功移动");
         }
     }
@@ -98,11 +97,7 @@ public class Chessboard {
         if (isValidCapture(src, dest)) {
             //TODO: Fix this!!!!!!!!!
             grid[dest.getRow()][dest.getCol()].removePiece();//
-
-            //hgy
             new SoundEffect().playEffect("Resource\\capture.wav");
-            //hgy
-            //turn++;//////////////////////////////////////////////////////////////////////////
             System.out.println("成功捕食");
             System.out.println("Grid is as follows:");
             for (int i = 0; i < grid.length; i++) {

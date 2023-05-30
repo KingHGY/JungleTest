@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Timer extends Thread
 {
-    public static int time = 11;
+    public static int time = 31;
     public GameController gameController;
     @Override
     public void run(){
@@ -28,11 +28,11 @@ public class Timer extends Thread
                         e.printStackTrace();
                     }
                 }
-                time = 11;
+                time = 31;
 
                 if (b)///////////////////time = 0
                 {
-                    if(gameController.easyAIBomb == 0 && gameController.hardAIBomb == 0)
+                    if(gameController.easyAIBomb == 0 && gameController.hardAIBomb == 0 && gameController.timerBomb == 0)
                     {
                         gameController.easyAI = true;
                         gameController.easyAImove();
