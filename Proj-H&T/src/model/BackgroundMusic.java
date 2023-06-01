@@ -22,7 +22,6 @@ public class BackgroundMusic
                 clip.open(audioInput);
                 clip.start();
                 clip.loop(0);
-                //Clip.LOOP_CONTINUOUSLY
             }
         }
         catch (Exception ex)

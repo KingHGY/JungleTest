@@ -174,7 +174,6 @@ public class GameController implements GameListener {
             easyAImove();
             hardAImove();
             checkWin();
-
             // TODO: if the chess enter Dens or Traps and so on
         }
     }

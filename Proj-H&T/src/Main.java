@@ -1,7 +1,5 @@
 import model.BackgroundMusic;
-import model.SoundEffect;
 import view.GameBeginFrame;
-
 import javax.swing.*;
 import java.io.IOException;
 

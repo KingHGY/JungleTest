@@ -29,7 +29,6 @@ public class ChessboardComponent extends JPanel {
     public final int CHESS_SIZE;
     public boolean isDay = true;
     JLabel waterPicture;
-    public JLabel turnLabel;
     public JLabel timeLabel;
     public Set<ChessboardPoint> riverCell = new HashSet<>();
     public Set<ChessboardPoint> trapCell = new HashSet<>();
@@ -49,7 +48,6 @@ public class ChessboardComponent extends JPanel {
 
     public ChessboardComponent(int chessSize,  JLabel timeLabel, ChessGameFrame chessGameFrame) {
         this.timeLabel = timeLabel;
-        //this.turnLabel = turnLabel;
         CHESS_SIZE = chessSize;
         int width = CHESS_SIZE * 7;
         int height = CHESS_SIZE * 9;
@@ -251,7 +249,6 @@ public class ChessboardComponent extends JPanel {
                 try {
                     gameController.onPlayerClickChessPiece(getChessboardPoint(e.getPoint()),
                             (TotalChessComponent) clickedComponent.getComponents()[0]);
-
 /*
                     for(int i = 0 ; i < gameController.model.pointsCanMOveTo(getChessboardPoint(e.getPoint())).size() ; i++)
                     {
@@ -259,8 +256,6 @@ public class ChessboardComponent extends JPanel {
                                 (TotalChessComponent) clickedComponent.getComponents()[0]);
                     }
 */
-
-
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }

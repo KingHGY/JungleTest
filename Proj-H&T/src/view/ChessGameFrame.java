@@ -23,7 +23,6 @@ public class ChessGameFrame extends JFrame {
     public final JLabel dayBG;
     public final JLabel nightBG;
     JLabel timeLabel;
-    JLabel turnLabel;
 
     public ChessboardComponent chessboardComponent;
     public ChessGameFrame(int width, int height) {
